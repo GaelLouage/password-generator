@@ -1,0 +1,73 @@
+﻿<Window x:Class="PasswordGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordGenerator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="400" Background="Black" ResizeMode="NoResize">
+    <Grid Background="#FF121117">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0"  Background="#24222B" Grid.ColumnSpan="2">
+            <Label x:Name="lblPassword"  Foreground="White"
+               Content="new password" 
+               Margin="15 20 0 15"
+               FontSize="20"
+              />
+        
+        </StackPanel>
+        <Image Grid.Row="0" Grid.Column="1" x:Name="imgCopy" Source="/Images/copy.png"  Width="65" Margin="125 10 10 10" RenderTransformOrigin="0.5,0.645" MouseDown="imgCopy_MouseDown"/>
+        <StackPanel Orientation="Horizontal"  Grid.Row="2" Grid.Column="0"   Background="#24222B" Grid.ColumnSpan="2">
+            <Label   Foreground="White"
+               Content="Character Length" 
+               Margin="15 20 15 15"
+               FontSize="20"
+              />
+            <Label x:Name="lblCharLength"    Foreground="#70eaa1"
+               Content="10" 
+               Margin="150 10 10 15"
+               FontSize="25"
+              />
+        
+        </StackPanel>
+        <!--slider-->
+        <StackPanel  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="#24222B">
+            <Slider x:Name="slCharLength" Foreground="#70eaa1" Maximum="20" Minimum="0" Margin="15 25 10 10" ValueChanged="slCharLength_ValueChanged" SmallChange="1" Value="20"/>
+        </StackPanel>
+        <!--checkboxes-->
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.RowSpan="4"   Background="#24222B" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="cbUpperCaseLetters" Background="#70eaa1" Foreground="White" FontSize="20"   Margin="15 25 1 15" />
+                <Label Content="Inluce Uppercase" Foreground="White" FontSize="20" Margin="5 11 15 15" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="cbLowerCaseLetters"  Background="#70eaa1"   Foreground="White" FontSize="20"   Margin="15 25 1 15" />
+                <Label Content="Inluce LowerCase Letters" Foreground="White" FontSize="20" Margin="5 11 15 15" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="cbNumbers" Background="#70eaa1"   Foreground="White" FontSize="20"   Margin="15 25 1 15" />
+                <Label Content="Inluce Numbers" Foreground="White" FontSize="20" Margin="5 11 15 15" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox  x:Name="cbSymbols" Background="#70eaa1"   Foreground="White" FontSize="20"   Margin="15 25 1 15" />
+                <Label Content="Inluce Symbols" Foreground="White" FontSize="20" Margin="5 11 15 15" />
+            </StackPanel>
+         
+        </StackPanel>
+        <Button x:Name="btnGenerate" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Margin="10 10 10 20" Background="#70eaa1" Foreground="White" FontSize="20" Content="GENERATE" Click="btnGenerate_Click"/>
+    </Grid>
+</Window>
